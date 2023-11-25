@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { isLoaded, useFonts } from "expo-font";
+import { useFonts } from "expo-font";
 import { SplashScreen, Stack, useRouter } from "expo-router";
 import { useEffect } from "react";
 import { TouchableOpacity } from "react-native";

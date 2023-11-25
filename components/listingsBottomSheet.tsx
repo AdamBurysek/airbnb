@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import BottomSheet from "@gorhom/bottom-sheet";
 import Listings from "./listings";
 import Colors from "@/constants/Colors";

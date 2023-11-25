@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  FlatList,
   ListRenderItem,
   TouchableOpacity,
   StyleSheet,
