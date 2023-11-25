@@ -7,6 +7,7 @@ import Listings from "@/components/listings";
 import listingsData from "@/assets/data/airbnb-listings.json";
 import listingsMaps from "@/assets/data/airbnb-listings.geo.json";
 import ListingsMap from "@/components/listingsMap";
+import ListingsBottomSheet from "@/components/listingsBottomSheet";
 
 const Page = () => {
   const [category, setCategory] = useState("Tiny homes");
@@ -18,7 +19,7 @@ const Page = () => {
   };
 
   return (
-    <View style={{ flex: 1, marginTop: 130 }}>
+    <View style={{ flex: 1, marginTop: 80 }}>
       <Stack.Screen
         options={{
           header: () => (
@@ -28,6 +29,10 @@ const Page = () => {
       />
       {/* <Listings listings={items} category={category}></Listings> */}
       <ListingsMap listings={mapItems}></ListingsMap>
+      <ListingsBottomSheet
+        listings={items}
+        category={category}
+      ></ListingsBottomSheet>
     </View>
   );
 };
