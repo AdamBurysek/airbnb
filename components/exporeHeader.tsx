@@ -5,6 +5,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
+  Platform,
+  StatusBar,
 } from "react-native";
 import React, { useRef, useState } from "react";
 import { Link, useFocusEffect } from "expo-router";
@@ -43,6 +45,8 @@ const categories = [
   },
 ];
 
+const STATUS_BAR_HEIGHT = StatusBar.currentHeight;
+
 interface Props {
   onCategoryChanged: (category: string) => void;
 }
@@ -65,7 +69,7 @@ const ExporeHeader = ({ onCategoryChanged }: Props) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+    <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.actionRow}>
           <Link href={"/(modals)/booking"} asChild>
@@ -156,7 +160,7 @@ const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 30,
     backgroundColor: "#fff",
-    elevation: 2,
+    elevation: 20,
     shadowColor: "#000",
     shadowOpacity: 0.12,
     shadowRadius: 8,
@@ -188,6 +192,12 @@ const styles = StyleSheet.create({
     borderBottomColor: "#000",
     borderBottomWidth: 2,
     paddingBottom: 8,
+  },
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#fff",
+    marginTop: Platform.OS === "android" ? 15 + (STATUS_BAR_HEIGHT ?? 0) : 0,
+    paddingTop: 2,
   },
 });
 
